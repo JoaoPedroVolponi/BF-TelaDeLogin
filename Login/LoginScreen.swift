@@ -16,9 +16,17 @@ class LoginScreen: UIView {
         return image
     }()
     
+    lazy var logoAppImageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "BFLogin")
+        return image
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(self.subImageView)
+        self.addSubview(self.logoAppImageView)
         self.configConstraints()
     }
     
@@ -32,6 +40,11 @@ class LoginScreen: UIView {
             self.subImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.subImageView.topAnchor.constraint(equalTo: self.topAnchor),
             self.subImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.logoAppImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,constant: 55),
+            self.logoAppImageView.heightAnchor.constraint(equalToConstant: 108),
+            self.logoAppImageView.widthAnchor.constraint(equalToConstant: 108),
+            self.logoAppImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
 }
