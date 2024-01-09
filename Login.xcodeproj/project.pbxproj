@@ -13,6 +13,7 @@
 		81B042242B48E42500781236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B042232B48E42500781236 /* Assets.xcassets */; };
 		81B042272B48E42500781236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B042252B48E42500781236 /* LaunchScreen.storyboard */; };
 		81BCF44D2B4CDB1300A3D729 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BCF44C2B4CDB1300A3D729 /* LoginVC.swift */; };
+		81BCF44F2B4CDCDB00A3D729 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BCF44E2B4CDCDB00A3D729 /* LoginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		81B042262B48E42500781236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81B042282B48E42500781236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BCF44C2B4CDB1300A3D729 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		81BCF44E2B4CDCDB00A3D729 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				81B0421C2B48E42400781236 /* SceneDelegate.swift */,
 				81B0421E2B48E42400781236 /* ViewController.swift */,
 				81BCF44C2B4CDB1300A3D729 /* LoginVC.swift */,
+				81BCF44E2B4CDCDB00A3D729 /* LoginScreen.swift */,
 				81B042232B48E42500781236 /* Assets.xcassets */,
 				81B042252B48E42500781236 /* LaunchScreen.storyboard */,
 				81B042282B48E42500781236 /* Info.plist */,
@@ -141,6 +144,7 @@
 				81B0421B2B48E42400781236 /* AppDelegate.swift in Sources */,
 				81BCF44D2B4CDB1300A3D729 /* LoginVC.swift in Sources */,
 				81B0421D2B48E42400781236 /* SceneDelegate.swift in Sources */,
+				81BCF44F2B4CDCDB00A3D729 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
