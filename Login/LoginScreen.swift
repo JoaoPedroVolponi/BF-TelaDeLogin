@@ -81,6 +81,15 @@ class LoginScreen: UIView {
         return tf
     }()
     
+    lazy var recoverPasswordButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Recuperar senha?", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        button.setTitleColor(UIColor(red: 231/255, green: 48/255, blue: 214/255, alpha: 1.0), for: .normal)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(self.subImageView)
@@ -89,6 +98,7 @@ class LoginScreen: UIView {
         self.addSubview(self.descriptionLabel)
         self.addSubview(self.loginTextField)
         self.addSubview(self.senhaTextField)
+        self.addSubview(self.recoverPasswordButton)
         self.configConstraints()
     }
     
@@ -123,7 +133,11 @@ class LoginScreen: UIView {
             self.senhaTextField.topAnchor.constraint(equalTo: self.loginTextField.bottomAnchor, constant: 15),
             self.senhaTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.senhaTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            self.senhaTextField.heightAnchor.constraint(equalToConstant: 39)
+            self.senhaTextField.heightAnchor.constraint(equalToConstant: 39),
+            
+            self.recoverPasswordButton.topAnchor.constraint(equalTo: self.senhaTextField.bottomAnchor, constant: 9),
+            self.recoverPasswordButton.trailingAnchor.constraint(equalTo: self.loginTextField.trailingAnchor),
+            self.recoverPasswordButton.heightAnchor.constraint(equalToConstant: 16)
         ])
     }
 }
