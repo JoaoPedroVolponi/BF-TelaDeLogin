@@ -94,10 +94,22 @@ class LoginScreen: UIView {
        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "gradient3")
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleToFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 8
         return image
+    }()
+    
+    lazy var loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Entrar", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.white, for: .normal)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 8
+        button.titleLabel?.textAlignment = .center
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -110,6 +122,7 @@ class LoginScreen: UIView {
         self.addSubview(self.senhaTextField)
         self.addSubview(self.recoverPasswordButton)
         self.addSubview(self.subLoginView)
+        self.addSubview(self.loginButton)
         self.configConstraints()
     }
     
@@ -148,7 +161,17 @@ class LoginScreen: UIView {
             
             self.recoverPasswordButton.topAnchor.constraint(equalTo: self.senhaTextField.bottomAnchor, constant: 9),
             self.recoverPasswordButton.trailingAnchor.constraint(equalTo: self.loginTextField.trailingAnchor),
-            self.recoverPasswordButton.heightAnchor.constraint(equalToConstant: 16)
+            self.recoverPasswordButton.heightAnchor.constraint(equalToConstant: 16),
+            
+            self.loginButton.topAnchor.constraint(equalTo: self.recoverPasswordButton.bottomAnchor, constant: 36),
+            self.loginButton.leadingAnchor.constraint(equalTo: self.loginTextField.leadingAnchor),
+            self.loginButton.trailingAnchor.constraint(equalTo: self.loginTextField.trailingAnchor),
+            self.loginButton.heightAnchor.constraint(equalToConstant: 41),
+            
+            self.subLoginView.leadingAnchor.constraint(equalTo: self.loginButton.leadingAnchor),
+            self.subLoginView.trailingAnchor.constraint(equalTo: self.loginButton.trailingAnchor),
+            self.subImageView.topAnchor.constraint(equalTo: self.loginButton.topAnchor),
+            self.subLoginView.bottomAnchor.constraint(equalTo: self.loginButton.bottomAnchor)
             
         ])
     }
