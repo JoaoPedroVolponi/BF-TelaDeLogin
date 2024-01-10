@@ -90,6 +90,16 @@ class LoginScreen: UIView {
         return button
     }()
     
+    lazy var subLoginView: UIImageView = {
+       let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "gradient3")
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 8
+        return image
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(self.subImageView)
@@ -99,6 +109,7 @@ class LoginScreen: UIView {
         self.addSubview(self.loginTextField)
         self.addSubview(self.senhaTextField)
         self.addSubview(self.recoverPasswordButton)
+        self.addSubview(self.subLoginView)
         self.configConstraints()
     }
     
@@ -138,6 +149,7 @@ class LoginScreen: UIView {
             self.recoverPasswordButton.topAnchor.constraint(equalTo: self.senhaTextField.bottomAnchor, constant: 9),
             self.recoverPasswordButton.trailingAnchor.constraint(equalTo: self.loginTextField.trailingAnchor),
             self.recoverPasswordButton.heightAnchor.constraint(equalToConstant: 16)
+            
         ])
     }
 }
