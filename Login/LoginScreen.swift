@@ -32,12 +32,22 @@ class LoginScreen: UIView {
         return label
     }()
     
+    lazy var descriptionLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "O marketplace de NFTs da Backfront Academy"
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(self.subImageView)
         self.addSubview(self.logoAppImageView)
         self.addSubview(self.loginLabel)
+        self.addSubview(self.descriptionLabel)
         self.configConstraints()
     }
     
@@ -58,7 +68,11 @@ class LoginScreen: UIView {
             self.logoAppImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             self.loginLabel.topAnchor.constraint(equalTo: self.logoAppImageView.bottomAnchor, constant: 16),
-            self.loginLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            self.loginLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            
+            self.descriptionLabel.topAnchor.constraint(equalTo: self.loginLabel.bottomAnchor, constant: 4),
+            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            self.descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
         ])
     }
 }
