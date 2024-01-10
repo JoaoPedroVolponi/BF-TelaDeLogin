@@ -42,12 +42,32 @@ class LoginScreen: UIView {
         return label
     }()
     
+    lazy var loginTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0)
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .emailAddress
+        tf.attributedPlaceholder = NSAttributedString(
+            string: "Login",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.4)]
+        )
+        tf.textColor = .white
+        tf.clipsToBounds = true
+        tf.layer.cornerRadius = 12
+        tf.layer.borderWidth = 1.0
+        tf.layer.borderColor = UIColor.white.cgColor
+        return tf
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(self.subImageView)
         self.addSubview(self.logoAppImageView)
         self.addSubview(self.loginLabel)
         self.addSubview(self.descriptionLabel)
+        self.addSubview(self.loginTextField)
         self.configConstraints()
     }
     
@@ -73,6 +93,11 @@ class LoginScreen: UIView {
             self.descriptionLabel.topAnchor.constraint(equalTo: self.loginLabel.bottomAnchor, constant: 4),
             self.descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             self.descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            
+            self.loginTextField.topAnchor.constraint(equalTo: self.descriptionLabel.bottomAnchor, constant: 32),
+            self.loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            self.loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            self.loginTextField.heightAnchor.constraint(equalToConstant: 39)
         ])
     }
 }
