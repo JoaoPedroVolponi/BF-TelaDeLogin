@@ -162,17 +162,16 @@ class LoginScreen: UIView {
             self.recoverPasswordButton.topAnchor.constraint(equalTo: self.senhaTextField.bottomAnchor, constant: 9),
             self.recoverPasswordButton.trailingAnchor.constraint(equalTo: self.loginTextField.trailingAnchor),
             self.recoverPasswordButton.heightAnchor.constraint(equalToConstant: 16),
-            
-            self.loginButton.topAnchor.constraint(equalTo: self.recoverPasswordButton.bottomAnchor, constant: 36),
+                  
+            self.loginButton.topAnchor.constraint(equalTo: self.recoverPasswordButton.bottomAnchor,constant: 36),
             self.loginButton.leadingAnchor.constraint(equalTo: self.loginTextField.leadingAnchor),
             self.loginButton.trailingAnchor.constraint(equalTo: self.loginTextField.trailingAnchor),
             self.loginButton.heightAnchor.constraint(equalToConstant: 41),
             
             self.subLoginView.leadingAnchor.constraint(equalTo: self.loginButton.leadingAnchor),
             self.subLoginView.trailingAnchor.constraint(equalTo: self.loginButton.trailingAnchor),
-            self.subImageView.topAnchor.constraint(equalTo: self.loginButton.topAnchor),
-            self.subLoginView.bottomAnchor.constraint(equalTo: self.loginButton.bottomAnchor)
-            
+            self.subLoginView.topAnchor.constraint(equalTo: self.loginButton.topAnchor),
+            self.subLoginView.bottomAnchor.constraint(equalTo: self.loginButton.bottomAnchor),
         ])
     }
 }
